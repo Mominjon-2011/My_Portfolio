@@ -127,10 +127,8 @@
         // Typing effect for hero text
         const typingText = document.getElementById('typing-text');
         const texts = [
-            "Full Stack Developer",
-            "UI/UX Designer",
-            "Veb Dasturchi",
-            "Mobile App Developer"
+            "Frontend Dasturchi",
+            "UI/UX Designer"
         ];
         let textIndex = 0;
         let charIndex = 0;
