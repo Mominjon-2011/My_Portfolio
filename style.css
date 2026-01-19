@@ -256,7 +256,7 @@ nav ul li a:hover, nav ul li a.active {
     justify-content: center;
     gap: 15px;
     margin-top: auto;
-    padding: 20px;
+    padding: 10px;
     animation: fadeInUp 1s ease 0.8s both;
 }
 
