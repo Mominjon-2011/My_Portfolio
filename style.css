@@ -731,7 +731,9 @@ nav ul li a:hover, nav ul li a.active {
 .portfolio-img {
     height: 250px;
     width: 100%;
-    background: url(img/Screenshot\ 2026-02-21\ 212440.png);
+    background-image:  url(img/Screenshot\ 2026-02-21\ 212440.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
