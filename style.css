@@ -731,7 +731,7 @@ nav ul li a:hover, nav ul li a.active {
 .portfolio-img {
     height: 250px;
     width: 100%;
-    background: var(--gradient);
+    background: url(img/Screenshot\ 2026-02-21\ 212440.png);
     display: flex;
     align-items: center;
     justify-content: center;
