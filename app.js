@@ -1,177 +1,344 @@
-    // Mobile Menu Toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
+// DOM Elements
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = themeToggle?.querySelector('i');
+const themeToggleFooter = document.querySelector('.theme-toggle-footer');
+const themeIconFooter = themeToggleFooter?.querySelector('i');
+const body = document.body;
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+const contactForm = document.getElementById('contactForm');
+const sections = document.querySelectorAll('section');
 
-        // Portfolio Filter
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+// Hamburger Menu
+hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+// Close menu when clicking a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger?.classList.remove('active');
+        navMenu?.classList.remove('active');
+    });
+});
 
-                const filter = button.getAttribute('data-filter');
+// Typed Text Effect
+const typedText = document.querySelector('.typed-text');
+if (typedText) {
+    const words = ['Full-Stack Developer', 'UI/UX Designer', 'Creative Thinker', 'Problem Solver', 'Team Lead'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 100);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Form ma'lumotlarini yig'ish
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Bu yerda form ma'lumotlarini serverga yuborishingiz mumkin
-            console.log('Form ma\'lumotlari:', formData);
-
-            // Muvaffaqiyat xabari
-            alert('Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog\'lanaman.');
-            this.reset();
-        });
-
-        // Smooth Scrolling for Navigation Links
-        document.querySelectorAll('.nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-
-                window.scrollTo({
-                    top: targetSection.offsetTop - 20,
-                    behavior: 'smooth'
-                });
-
-                // Update active nav item
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-
-                // Close mobile menu after click
-                if (window.innerWidth <= 768) {
-                    document.querySelector('.sidebar').classList.remove('active');
-                }
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = `fadeInUp 1s ease forwards`;
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            observer.observe(section);
-        });
-
-        // Update active nav item on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Typing effect for hero text
-        const typingText = document.getElementById('typing-text');
-        const texts = [
-            "Frontend Dasturchi",
-            "UI/UX Designer"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-
-        function typeWriter() {
-            const currentText = texts[textIndex];
-
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                typingSpeed = 100;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                typingSpeed = 1000; // Pause at the end
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typingSpeed = 500; // Pause before starting new text
-            }
-
-            setTimeout(typeWriter, typingSpeed);
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+            typedText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
         }
+        
+        if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(typeEffect, 500);
+        } else {
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+    }
+    
+    typeEffect();
+}
 
-        // Start typing effect after page load
-        window.addEventListener('load', () => {
-            setTimeout(typeWriter, 1000);
-        });
+// Theme Toggle
+function toggleTheme() {
+    body.classList.toggle('light-theme');
+    
+    if (body.classList.contains('light-theme')) {
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        if (themeIconFooter) {
+            themeIconFooter.classList.remove('fa-moon');
+            themeIconFooter.classList.add('fa-sun');
+        }
+        localStorage.setItem('theme', 'light');
+    } else {
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+        if (themeIconFooter) {
+            themeIconFooter.classList.remove('fa-sun');
+            themeIconFooter.classList.add('fa-moon');
+        }
+        localStorage.setItem('theme', 'dark');
+    }
+}
 
-        // Profile image error handling
-        document.addEventListener('DOMContentLoaded', function () {
-            const profilePhoto = document.querySelector('.profile-photo');
-            const profilePlaceholder = document.querySelector('.profile-placeholder');
+themeToggle?.addEventListener('click', toggleTheme);
+themeToggleFooter?.addEventListener('click', toggleTheme);
 
-            if (profilePhoto && profilePhoto.complete && profilePhoto.naturalHeight === 0) {
-                profilePhoto.style.display = 'none';
-                profilePlaceholder.style.display = 'flex';
+// Check saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    body.classList.add('light-theme');
+    if (themeIcon) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+    if (themeIconFooter) {
+        themeIconFooter.classList.remove('fa-moon');
+        themeIconFooter.classList.add('fa-sun');
+    }
+}
+
+// Menu Active State Management
+function removeActiveClasses() {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+}
+
+function setActiveLink(link) {
+    removeActiveClasses();
+    link.classList.add('active');
+}
+
+// Scroll bo'lganda active linkni o'zgartirish
+window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPosition = window.scrollY + 100;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === `#${current}`) {
+            setActiveLink(link);
+        }
+    });
+});
+
+// Link bosilganda active holatga o'tkazish
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        setActiveLink(link);
+        
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Sahifa yuklanganda birinchi linkni active qilish
+window.addEventListener('load', () => {
+    const homeLink = document.querySelector('.nav-link[href="#home"]');
+    if (homeLink) {
+        setActiveLink(homeLink);
+    }
+});
+
+// Portfolio filter
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
             }
         });
+    });
+});
+
+// Stats Counter
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsSection = document.querySelector('.stats-grid');
+
+function animateStats() {
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 50;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                stat.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+// Contact form
+contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const btn = contactForm.querySelector('.btn-submit');
+    btn.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+        btn.style.transform = 'scale(1)';
+        
+        const formData = new FormData(contactForm);
+        console.log('Form submitted:', Object.fromEntries(formData));
+        
+        contactForm.reset();
+        
+        showNotification('Xabar yuborildi! Tez orada javob beramiz.', 'success');
+    }, 300);
+});
+
+// Notification function
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+        <p>${message}</p>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Parallax effect for floating elements
+document.addEventListener('mousemove', (e) => {
+    const elements = document.querySelectorAll('.element');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    elements.forEach((el, index) => {
+        const speed = (index + 1) * 20;
+        const x = (mouseX * speed) - (speed / 2);
+        const y = (mouseY * speed) - (speed / 2);
+        el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+// Scroll animation for sections
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    fadeObserver.observe(section);
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+        navbar.style.padding = '8px 0';
+    } else {
+        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        navbar.style.padding = '10px 0';
+    }
+});
+
+// Light theme uchun navbar rangini o'zgartirish
+const observerForTheme = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+            const navbar = document.querySelector('.navbar');
+            if (body.classList.contains('light-theme')) {
+                navbar.style.background = 'rgba(232, 240, 254, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        }
+    });
+});
+
+observerForTheme.observe(body, { attributes: true });
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.createElement('div');
+    preloader.className = 'preloader';
+    preloader.innerHTML = '<div class="loader"></div>';
+    document.body.appendChild(preloader);
+    
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.remove();
+        }, 500);
+    }, 1000);
+});

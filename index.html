@@ -4,229 +4,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xusinov Mo'minjon | Portfolio</title>
+    <title>Xusinov Mo`minjon | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <style>
-        /* CSS kodlari pastga qo'yilgan */
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-        <div class="logo">
-            <h1>XUSINOV MO'MINJON</h1>
-            <p>Full Stack Developer</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
-                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> Men haqimda</a></li>
-                <li><a href="#resume" class="nav-link"><i class="fas fa-file-alt"></i> Rezyume</a></li>
-                <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                <li><a href="#services" class="nav-link"><i class="fas fa-cog"></i> Xizmatlar</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Bog'lanish</a></li>
-            </ul>
-        </nav>
-        <div class="social-links-sidebar">
-            <a href="https://t.me/Xusinov_M" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.instagram.com/_xusinov_m?igsh=MWE1bGF4dW44djExdA==" target="_blank">
-            <i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/Mominjon-2011" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/username" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="#home">X.M</a>
+                </div>
 
-    </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Bosh sahifa</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> Men haqimda</a></li>
+                    <li><a href="#resume" class="nav-link"><i class="fas fa-file-alt"></i> Rezume</a></li>
+                    <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i> Xizmatlar</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Bog`lanish</a></li>
+                </ul>
 
-    <!-- Mobile Menu Toggle -->
-    <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
+                <div class="nav-right">
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="element e1"></div>
+        <div class="element e2"></div>
+        <div class="element e3"></div>
+        <div class="element e4"></div>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="floating-elements">
-                <div class="floating-element"></div>
-                <div class="floating-element"></div>
-                <div class="floating-element"></div>
-                <div class="floating-element"></div>
-            </div>
-            <div class="container hero-content">
-                <h1>XUSINOV MO'MINJON</h1>
-                <p id="typing-text"></p>
-                <div class="hero-btns">
-                    <a href="#portfolio" class="btn">Ishlarim</a>
-                    <a href="#contact" class="btn btn-accent">Ishga taklif</a>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home">
+            <div class="container">
+                <div class="home-content">
+                    <div class="home-text">
+                        <span class="subtitle">Dasturchi & Dizayner</span>
+                        <h1 class="glitch" data-text="Xusinov Mo`minjon">Xusinov Mo`minjon</h1>
+                        <div class="typewriter">
+                            <p>Men <span class="typed-text"></span><span class="cursor-blink">|</span></p>
+                        </div>
+                        <p class="description">8+ yillik tajriba. 50+ muvaffaqiyatli loyihalar. Kreativ yechimlar va
+                            zamonaviy texnologiyalar.</p>
+
+                        <div class="home-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <span>Ish boshlaymizmi?</span>
+                                <i class="fas fa-rocket"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <span>CV ni ko'rish</span>
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="social-strip">
+                            <a href="#" class="social-item">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-item">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-item">
+                                <i class="fab fa-telegram-plane"></i>
+                                <span>Telegram</span>
+                            </a>
+                            <a href="#" class="social-item">
+                                <i cl ass="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="home-visual">
+                        <!-- KATTA CUBE -->
+                        <div class="cube-container">
+                            <div class="cube">
+                                <div class="face front"><i class="fab fa-python"></i></div>
+                                <div class="face back"><i class="fab fa-html5"></i></div>
+                                <div class="face right"><i class="fab fa-js"></i></div>
+                                <div class="face left"><i class="fab fa-css3-alt"></i></div>
+                                <div class="face top"><i class="fab fa-bootstrap"></i></div>
+                                <div class="face bottom"><i class="fab fa-tailwindcss"></i></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="about" id="about">
+        <section id="about" class="about">
             <div class="container">
-                <div class="section-title">
-                    <h2>Men haqimda</h2>
+                <div class="section-header">
+                    <span class="section-subtitle">01.</span>
+                    <h2 class="section-title">Men haqimda</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="about-content">
-                    <div class="about-img">
-                        <div class="profile-img">
-                            <img src="images/profile.jpg" alt="Xusinov Mo'minjon" class="profile-photo"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="profile-placeholder">
-                                <i class="fas fa-user"></i>
+
+                <div class="about-bio">
+                    <div class="bio-image">
+                        <img src="https://picsum.photos/400/500?random=6" alt="Xusinov Mo`minjon">
+                        <div class="bio-image-overlay">
+                            <h3>Xusinov Mo`minjon</h3>
+                            <p>Full-Stack Developer</p>
+                        </div>
+                    </div>
+                    <div class="bio-text">
+                        <h3>Kreativ dasturchi va muammo yechuvchi</h3>
+                        <p>Men Xusinov Mo`minjon, 8 yildan ortiq tajribaga ega Full-Stack Developer. Toshkent shahrida
+                            yashayman va hozirda "InnovateTech" kompaniyasida Team Lead sifatida faoliyat yuritaman.</p>
+                        <p>Mening asosiy maqsadim - mijozlarning murakkab muammolariga innovatsion va samarali yechimlar
+                            topish. Har bir loyihaga individual yondashaman va eng zamonaviy texnologiyalarni
+                            qo'llayman.</p>
+
+                        <div class="bio-stats">
+                            <div class="bio-stat">
+                                <span class="bio-stat-number">50+</span>
+                                <span class="bio-stat-label">Loyihalar</span>
+                            </div>
+                            <div class="bio-stat">
+                                <span class="bio-stat-number">25+</span>
+                                <span class="bio-stat-label">Mijozlar</span>
+                            </div>
+                            <div class="bio-stat">
+                                <span class="bio-stat-number">8+</span>
+                                <span class="bio-stat-label">Yillik tajriba</span>
+                            </div>
+                            <div class="bio-stat">
+                                <span class="bio-stat-number">10+</span>
+                                <span class="bio-stat-label">Mukofotlar</span>
                             </div>
                         </div>
                     </div>
-                    <div class="about-text">
-                        <h3>Xusinov Mo'minjon</h3>
-                        <p>Men 1+ yillik tajribaga ega Wep dasturchiman. Zamonaviy veb texnologiyalarda
-                            ixtisoslashganman va murakkab muammolarni oddiy, chiroyli dizaynlarga aylantirishdan
-                            zavqlanaman.</p>
-                        <p>Maqsadim - toza, samarali kod yozish bilan birga pixel-perfect, tezkor tajribalarni taqdim
-                            etadigan mahsulotlar yaratish.</p>
+                </div>
 
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <i class="fas fa-user"></i>
-                                <div>
-                                    <strong>Ism:</strong> Mo'minjon
-                                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-perspective">
+                            <div class="card-front">
+                                <i class="fas fa-laptop-code"></i>
+                                <h3>Frontend</h3>
+                                <p>React, Vue, Angular</p>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Telefon:</strong> +998951047405
-                                </div>
+                            <div class="card-back">
+                                <i class="fas fa-check-circle"></i>
+                                <p>30+ loyiha</p>
+                                <p>5+ yil tajriba</p>
+                                <p>10+ mijoz</p>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email:</strong> mominjonbobojonov81@gmail.com
-                                </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-perspective">
+                            <div class="card-front">
+                                <i class="fas fa-server"></i>
+                                <h3>Backend</h3>
+                                <p>Node.js, Python, PHP</p>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Manzil:</strong> Xorazim viloyati xiva shahar
-                                </div>
+                            <div class="card-back">
+                                <i class="fas fa-check-circle"></i>
+                                <p>25+ loyiha</p>
+                                <p>6+ yil tajriba</p>
+                                <p>15+ mijoz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-perspective">
+                            <div class="card-front">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Mobile</h3>
+                                <p>React Native, Flutter</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fas fa-check-circle"></i>
+                                <p>15+ loyiha</p>
+                                <p>4+ yil tajriba</p>
+                                <p>8+ mijoz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-perspective">
+                            <div class="card-front">
+                                <i class="fas fa-cloud"></i>
+                                <h3>Cloud</h3>
+                                <p>AWS, Google Cloud</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fas fa-check-circle"></i>
+                                <p>20+ loyiha</p>
+                                <p>4+ yil tajriba</p>
+                                <p>12+ mijoz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-timeline">
+                    <h3 class="timeline-title">Ish tajribam</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2022 - Hozirgacha</span>
+                                <h4>Senior Full-Stack Developer & Team Lead</h4>
+                                <p>InnovateTech · 10+ kishilik jamoani boshqarish</p>
                             </div>
                         </div>
 
-                        <a href="cv.pdf" class="btn" style="margin-top: 20px;" download>
-                            <i class="fas fa-download"></i> CV Yuklab olish
-                        </a>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2020 - 2022</span>
+                                <h4>Full-Stack Developer</h4>
+                                <p>Digital Solutions · E-commerce va CRM tizimlari</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2018 - 2020</span>
+                                <h4>Frontend Developer</h4>
+                                <p>WebCraft Studio · Veb-saytlar va interfeyslar</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2016 - 2018</span>
+                                <h4>Junior Developer</h4>
+                                <p>StartUp · Kichik loyihalar va freelancing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-cloud">
+                    <h3 class="skills-title">Texnologiyalar</h3>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag" style="--i:1">React</span>
+                        <span class="skill-tag" style="--i:2">Node.js</span>
+                        <span class="skill-tag" style="--i:3">Python</span>
+                        <span class="skill-tag" style="--i:4">TypeScript</span>
+                        <span class="skill-tag" style="--i:5">Next.js</span>
+                        <span class="skill-tag" style="--i:6">Vue.js</span>
+                        <span class="skill-tag" style="--i:7">MongoDB</span>
+                        <span class="skill-tag" style="--i:8">PostgreSQL</span>
+                        <span class="skill-tag" style="--i:9">Docker</span>
+                        <span class="skill-tag" style="--i:10">AWS</span>
+                        <span class="skill-tag" style="--i:11">GraphQL</span>
+                        <span class="skill-tag" style="--i:12">Figma</span>
+                        <span class="skill-tag" style="--i:13">Redux</span>
+                        <span class="skill-tag" style="--i:14">Git</span>
+                        <span class="skill-tag" style="--i:15">Kubernetes</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Resume Section -->
-        <section class="resume" id="resume">
+        <section id="resume" class="resume">
             <div class="container">
-                <div class="section-title">
-                    <h2>Mening Rezyumem</h2>
+                <div class="section-header">
+                    <span class="section-subtitle">02.</span>
+                    <h2 class="section-title">Rezume</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="resume-container">
-                    <div class="resume-column">
-                        <h3>Ta'lim</h3>
-                        <div class="resume-item">
-                            <h3>Wep dizayin</h3>
-                            <span class="resume-date">2024 - 2026</span>
-                            <p>Xiva shahar IT PARK</p>
-                            <p>Veb Texnologiyalar va Sun'iy Intellekt yo'nalishida ixtisoslashgan.</p>
-                        </div>
-                        <div class="resume-item">
-                            <h3>Mening Mentorim</h3>
-                            <span class="resume-date">Rustambek Baltayev</span>
-                            <p>5+ yilik tajribaga ega frontent Developer</p>
-                            
-                        </div>
 
-                        <h3 style="margin-top: 40px;">Ko'nikmalar</h3>
-                        <div class="resume-item">
-                            <h3>Texnik Ko'nikmalar</h3>
-                            <p>HTML, CSS, JavaScript, Bootstrap, TailwindCSS , Python</p>
-                        </div>
-                        <div class="resume-item">
-                            <h3>Kasbiy Ko'nikmalar</h3>
-                            <p>Muammolarni hal qilish, Jamoa boshqaruvi, Loyiha menejmenti, Agile metodologiyasi, UI/UX
-                                Dizayn</p>
+                <div class="resume-grid">
+                    <div class="resume-column">
+                        <h3><i class="fas fa-graduation-cap"></i> Ta'lim</h3>
+
+                        <div class="resume-items">
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <span class="item-year">2020 - 2022</span>
+                                    <span class="item-badge">Magistratura</span>
+                                </div>
+                                <h4>Kompyuter injiniringi</h4>
+                                <p class="institution">Muhammad al-Xorazmiy nomidagi TATU</p>
+                                <p class="description">Kiberxavfsizlik va sun'iy intellekt yo'nalishi. Ilmiy ishlar va
+                                    loyihalar.</p>
+                                <div class="item-tags">
+                                    <span>Kiberxavfsizlik</span>
+                                    <span>Sun'iy intellekt</span>
+                                    <span>Machine Learning</span>
+                                </div>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <span class="item-year">2016 - 2020</span>
+                                    <span class="item-badge">Bakalavr</span>
+                                </div>
+                                <h4>Dasturiy injiniring</h4>
+                                <p class="institution">Muhammad al-Xorazmiy nomidagi TATU</p>
+                                <p class="description">Veb-dasturlash va ma'lumotlar bazasi. Qizil diplom.</p>
+                                <div class="item-tags">
+                                    <span>Veb dasturlash</span>
+                                    <span>Ma'lumotlar bazasi</span>
+                                    <span>Algoritmlar</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="resume-column">
-                        <h3>Tajriba</h3>
-                        <div class="resume-item">
-                            <h3>Veb Dasturchi</h3>
-                            <span class="resume-date">2024 - 2026</span>
-                            <p>Digital Agency Pro</p>
-                            <p>Turli sohalardagi mijozlar uchun  vebsayt  ishlab chiqishim mumkin.</p>
+                        <h3><i class="fas fa-briefcase"></i> Tajriba</h3>
+
+                        <div class="resume-items">
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <span class="item-year">2022 - Hozir</span>
+                                    <span class="item-badge">Senior</span>
+                                </div>
+                                <h4>Senior Full-Stack Developer</h4>
+                                <p class="company">InnovateTech · Team Lead</p>
+                                <p class="description">10+ kishilik jamoani boshqarish, murakkab loyihalar.</p>
+                                <div class="item-tags">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>Team Lead</span>
+                                    <span>Mikroservislar</span>
+                                </div>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <span class="item-year">2020 - 2022</span>
+                                    <span class="item-badge">Middle</span>
+                                </div>
+                                <h4>Full-Stack Developer</h4>
+                                <p class="company">Digital Solutions</p>
+                                <p class="description">E-commerce platformalar va CRM tizimlari.</p>
+                                <div class="item-tags">
+                                    <span>Vue.js</span>
+                                    <span>Laravel</span>
+                                    <span>MySQL</span>
+                                    <span>REST API</span>
+                                </div>
+                            </div>
+
+                            <div class="resume-item">
+                                <div class="item-header">
+                                    <span class="item-year">2018 - 2020</span>
+                                    <span class="item-badge">Junior</span>
+                                </div>
+                                <h4>Frontend Developer</h4>
+                                <p class="company">WebCraft Studio</p>
+                                <p class="description">Veb-saytlar va interfeyslar yaratish.</p>
+                                <div class="item-tags">
+                                    <span>HTML/CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                    <span>Bootstrap</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="resume-item">
-                            <h3>Yosh Dasturchi</h3>
-                            <span class="resume-date">2024 - 2026</span>
-                            <p>StartUp Ventures</p>
-                            <p>Kasbiy karyeramni boshladim. Sanoatning eng yaxshi amaliyotlarini o'rgandim va kodlash
-                                ko'nikmalarimni takomillashtirdim.</p>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Yillik tajriba</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Loyihalar</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Mijozlar</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Mamnunlik</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section class="portfolio" id="portfolio">
+        <section id="portfolio" class="portfolio">
             <div class="container">
-                <div class="section-title">
-                    <h2>Mening Portfolio</h2>
+                <div class="section-header">
+                    <span class="section-subtitle">03.</span>
+                    <h2 class="section-title">Portfolio</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="portfolio-filters">
+
+                <div class="portfolio-filter">
                     <button class="filter-btn active" data-filter="all">Hammasi</button>
-                    <button class="filter-btn" data-filter="web">Veb Dizayn</button>
-                    <button class="filter-btn" data-filter="app">Ilova</button>
-                    <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    <button class="filter-btn" data-filter="web">Veb saytlar</button>
+                    <button class="filter-btn" data-filter="app">Mobil ilovalar</button>
+                    <button class="filter-btn" data-filter="design">Dizayn</button>
                 </div>
+
                 <div class="portfolio-grid">
                     <div class="portfolio-item" data-category="web">
-                        <div class="portfolio-img" style="background: var(--gradient3);">
-                            Kalkulyator
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=1" alt="Project 1">
                             <div class="portfolio-overlay">
-                                <a href="https://mominjon-2011.github.io/Kalkulyator/" class="btn">Loyihani ko'rish</a>
+                                <div class="portfolio-info">
+                                    <h3>E-commerce Platform</h3>
+                                    <p>React, Node.js, MongoDB</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>kalkulyator</h3>
-                            <p>Oddiy kalkulyator dasturi valyuta bilan</p>
                         </div>
                     </div>
 
                     <div class="portfolio-item" data-category="app">
-                        <div class="portfolio-img" style="background: var(--gradient2);">
-                            MOBILE ILOVA
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=2" alt="Project 2">
                             <div class="portfolio-overlay">
-                                <a href="#" class="btn">Loyihani ko'rish</a>
+                                <div class="portfolio-info">
+                                    <h3>Fitness App</h3>
+                                    <p>React Native, Firebase</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Fitnes Traker</h3>
-                            <p>Salomatlikni monitoring qilish uchun cross-platform mobil ilova</p>
                         </div>
                     </div>
 
-                    
-                    <div class="portfolio-item" data-category="ui">
-                        <div class="portfolio-img" style="background: var(--gradient4);">
-                            DASHBOARD UI
+                    <div class="portfolio-item" data-category="design">
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=3" alt="Project 3">
                             <div class="portfolio-overlay">
-                                <a href="#" class="btn">Loyihani ko'rish</a>
+                                <div class="portfolio-info">
+                                    <h3>Banking Dashboard</h3>
+                                    <p>Figma, Adobe XD</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-behance"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="portfolio-content">
-                            <h3>Analitika Dashboard</h3>
-                            <p>Biznes intellekt platformasi uchun zamonaviy UI dizayn</p>
+                    </div>
+
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=4" alt="Project 4">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>CRM System</h3>
+                                    <p>Vue.js, Laravel</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="app">
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=5" alt="Project 5">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Food Delivery</h3>
+                                    <p>Flutter, Firebase</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="design">
+                        <div class="portfolio-image">
+                            <img src="https://picsum.photos/600/400?random=6" alt="Project 6">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Portfolio Design</h3>
+                                    <p>Figma, Illustrator</p>
+                                    <div class="portfolio-links">
+                                        <a href="#"><i class="fas fa-link"></i></a>
+                                        <a href="#"><i class="fab fa-behance"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -234,104 +534,128 @@
         </section>
 
         <!-- Services Section -->
-        <section class="services" id="services">
+        <section id="services" class="services">
             <div class="container">
-                <div class="section-title">
-                    <h2>Mening Xizmatlarim</h2>
+                <div class="section-header">
+                    <span class="section-subtitle">04.</span>
+                    <h2 class="section-title">Xizmatlar</h2>
+                    <div class="section-line"></div>
                 </div>
+
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" style="--clr: #ff6b6b">
                         <div class="service-icon">
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Veb Dasturlash</h3>
-                        <p>Zamonaviy texnologiyalar va eng yaxshi amaliyotlar asosida maxsus veb ilovalar yaratish.</p>
+                        <p>Zamonaviy va responsive veb-saytlar, e-commerce platformalar</p>
+                        <ul class="service-list">
+                            <li>React/Next.js</li>
+                            <li>Vue/Nuxt.js</li>
+                            <li>Node.js/Python</li>
+                        </ul>
                     </div>
 
-                    <!-- <div class="service-card">
+                    <div class="service-card" style="--clr: #4d79ff">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Ilova Dasturlash</h3>
-                        <p>iOS va Android qurilmalari uchun cross-platform mobil ilovalar.</p>
-                    </div> -->
+                        <h3>Mobil Ilovalar</h3>
+                        <p>iOS va Android platformalari uchun native va cross-platform ilovalar</p>
+                        <ul class="service-list">
+                            <li>React Native</li>
+                            <li>Flutter</li>
+                            <li>Swift/Kotlin</li>
+                        </ul>
+                    </div>
 
-                    <div class="service-card">
+                    <div class="service-card" style="--clr: #4dff88">
                         <div class="service-icon">
-                            <i class="fas fa-palette"></i>
+                            <i class="fas fa-paint-brush"></i>
                         </div>
                         <h3>UI/UX Dizayn</h3>
-                        <p>Foydalanuvchilar uchun intuitiv va jozibali interfeyslar yaratish.</p>
+                        <p>Foydalanuvchi interfeysi va tajribasi dizayni</p>
+                        <ul class="service-list">
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>Prototiplash</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card" style="--clr: #ffb84d">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Bulutli texnologiyalar va DevOps</p>
+                        <ul class="service-list">
+                            <li>AWS</li>
+                            <li>Google Cloud</li>
+                            <li>Docker/K8s</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <section id="contact" class="contact">
             <div class="container">
-                <div class="section-title">
-                    <h2>Bog'lanish</h2>
+                <div class="section-header">
+                    <span class="section-subtitle">05.</span>
+                    <h2 class="section-title">Bog`lanish</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="contact-container">
+
+                <div class="contact-wrapper">
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Manzil</h3>
-                                <p>Xorazim viloyati Xiva shahri</p>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Manzil</h4>
+                                    <p>Toshkent, O'zbekiston</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Telefon</h3>
-                                <p>+998951047405</p>
+                            <div class="info-card">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Telefon</h4>
+                                    <p>+998 90 123 45 67</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>xusinov@example.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <div>
-                                <h3>Vebsayt</h3>
-                                <p>www.xusinov.dev</p>
+                            <div class="info-card">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>momin@dev.uz</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Ismingiz</label>
-                                <input type="text" id="name" class="form-control" required
-                                    placeholder="Ismingizni kiriting">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email manzilingiz</label>
-                                <input type="email" id="email" class="form-control" required
-                                    placeholder="Emailingizni kiriting">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Mavzu</label>
-                                <input type="text" id="subject" class="form-control" required
-                                    placeholder="Xabar mavzusini kiriting">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Xabar</label>
-                                <textarea id="message" class="form-control" required
-                                    placeholder="Xabaringizni kiriting"></textarea>
-                            </div>
-                            <button type="submit" class="btn">
-                                <i class="fas fa-paper-plane"></i> Xabarni yuborish
-                            </button>
-                        </form>
-                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ismingiz" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Mavzu">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Xabar" rows="5" required></textarea>
+                            <span class="focus-border"></span>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Yuborish</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -340,25 +664,21 @@
         <footer>
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-logo">
-                        <h2>XUSINOV MO'MINJON</h2>
-                        <p>Full Stack Developer & UI/UX Designer</p>
+                    <div class="footer-logo">XM</div>
+                    <div class="footer-text">
+                        <p>&copy; 2024 Xusinov Mo`minjon. Barcha huquqlar himoyalangan.</p>
                     </div>
-                    <div class="social-links">
-                        <a href="https://t.me/Xusinov_M" target="_blank"><i class="fab fa-telegram"></i></a>
-                        <a href="https://www.instagram.com/_xusinov_m?igsh=MWE1bGF4dW44djExdA==" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/Mominjon-2011" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/username" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <div class="footer-theme">
+                        <button class="theme-toggle-footer">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2025 Xusinov Mo'minjon. Barcha huquqlar himoyalangan.</p>
                 </div>
             </div>
         </footer>
-    </div>
+    </main>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
