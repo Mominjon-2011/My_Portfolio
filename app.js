@@ -2,11 +2,6 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
-const themeToggle = document.querySelector('.theme-toggle');
-const themeIcon = themeToggle?.querySelector('i');
-const themeToggleFooter = document.querySelector('.theme-toggle-footer');
-const themeIconFooter = themeToggleFooter?.querySelector('i');
-const body = document.body;
 const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 const contactForm = document.getElementById('contactForm');
@@ -58,50 +53,6 @@ if (typedText) {
     }
     
     typeEffect();
-}
-
-// Theme Toggle
-function toggleTheme() {
-    body.classList.toggle('light-theme');
-    
-    if (body.classList.contains('light-theme')) {
-        if (themeIcon) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-        if (themeIconFooter) {
-            themeIconFooter.classList.remove('fa-moon');
-            themeIconFooter.classList.add('fa-sun');
-        }
-        localStorage.setItem('theme', 'light');
-    } else {
-        if (themeIcon) {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
-        if (themeIconFooter) {
-            themeIconFooter.classList.remove('fa-sun');
-            themeIconFooter.classList.add('fa-moon');
-        }
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-themeToggle?.addEventListener('click', toggleTheme);
-themeToggleFooter?.addEventListener('click', toggleTheme);
-
-// Check saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-    body.classList.add('light-theme');
-    if (themeIcon) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-    if (themeIconFooter) {
-        themeIconFooter.classList.remove('fa-moon');
-        themeIconFooter.classList.add('fa-sun');
-    }
 }
 
 // Menu Active State Management
@@ -305,28 +256,12 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        navbar.style.padding = '8px 0';
+        navbar.style.padding = '13px 0';
     } else {
         navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.padding = '10px 0';
+        navbar.style.padding = '15px 0';
     }
 });
-
-// Light theme uchun navbar rangini o'zgartirish
-const observerForTheme = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-            const navbar = document.querySelector('.navbar');
-            if (body.classList.contains('light-theme')) {
-                navbar.style.background = 'rgba(232, 240, 254, 0.95)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-        }
-    });
-});
-
-observerForTheme.observe(body, { attributes: true });
 
 // Preloader
 window.addEventListener('load', () => {
