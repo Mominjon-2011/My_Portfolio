@@ -151,11 +151,6 @@ body {
     transition: var(--transition);
     animation: pulse 2s infinite;
     display: inline-block;
-    border-radius: 50%;
-    padding: 12px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .theme-icon:hover {
@@ -614,9 +609,11 @@ section {
 
 .bio-image {
     position: relative;
-    border-radius: 20px;
+    border-radius: 50%;
     overflow: hidden;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
     border: 3px solid rgba(74, 122, 201, 0.5);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 }
@@ -640,6 +637,7 @@ section {
     padding: 30px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     color: white;
+    text-align: center;
 }
 
 .bio-image-overlay h3 {
@@ -704,6 +702,7 @@ section {
 .about-card {
     perspective: 1500px;
     height: 280px;
+    width: 100%;
 }
 
 .card-perspective {
@@ -944,6 +943,7 @@ section {
     padding: 40px;
     border: 1px solid rgba(74, 122, 201, 0.2);
     backdrop-filter: blur(10px);
+    width: 100%;
 }
 
 .resume-column h3 {
@@ -990,6 +990,7 @@ section {
     border: 1px solid rgba(74, 122, 201, 0.2);
     overflow: hidden;
     backdrop-filter: blur(5px);
+    width: 100%;
 }
 
 .resume-item::before {
@@ -1093,6 +1094,7 @@ section {
     text-align: center;
     padding: 20px;
     position: relative;
+    width: 100%;
 }
 
 .stat-item::after {
@@ -1176,6 +1178,7 @@ section {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(74, 122, 201, 0.2);
     transition: var(--transition);
+    width: 100%;
 }
 
 .portfolio-item:hover {
@@ -1188,6 +1191,7 @@ section {
     position: relative;
     overflow: hidden;
     aspect-ratio: 4/3;
+    width: 100%;
 }
 
 .portfolio-image img {
@@ -1287,6 +1291,7 @@ section {
     transition: var(--transition);
     overflow: hidden;
     backdrop-filter: blur(10px);
+    width: 100%;
 }
 
 .service-card::before {
@@ -1389,6 +1394,7 @@ section {
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    width: 100%;
 }
 
 .info-card::before {
@@ -1451,6 +1457,7 @@ section {
     border-radius: 30px;
     border: 1px solid rgba(74, 122, 201, 0.2);
     backdrop-filter: blur(10px);
+    width: 100%;
 }
 
 .form-group {
@@ -1642,7 +1649,7 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE - MOBIL MARKAZLASHTIRILGAN ===== */
+/* ===== RESPONSIVE - MOBIL MARKAZLASHTIRILGAN VA BIR XIL O'LCHAM ===== */
 @media (max-width: 1200px) {
     .about-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1666,7 +1673,7 @@ footer {
         margin: 0 auto;
     }
     
-    /* Bola classlar 90% va markazda */
+    /* Barcha elementlar 100% en va markazda */
     .home-content,
     .about-bio,
     .resume-grid,
@@ -1684,18 +1691,26 @@ footer {
     .home-visual,
     .bio-text,
     .bio-image,
-    .resume-column,
     .info-cards,
     .contact-form,
     .portfolio-filter,
     .timeline,
-    .timeline-content {
-        width: 90%;
+    .timeline-content,
+    .about-card,
+    .portfolio-item,
+    .service-card,
+    .resume-item,
+    .info-card,
+    .stat-item,
+    .bio-stat,
+    .skill-tag,
+    .filter-btn {
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     
-    /* Gridlarni to'g'irlash */
+    /* Gridlarni block qilish */
     .home-content,
     .about-bio,
     .resume-grid,
@@ -1706,7 +1721,7 @@ footer {
         display: block;
     }
     
-    /* Har bir elementni markazga joylash */
+    /* Barcha elementlar orasiga 20px masofa */
     .home-text,
     .home-visual,
     .bio-image,
@@ -1719,23 +1734,121 @@ footer {
     .about-card,
     .timeline-item,
     .stat-item,
-    .skill-tag {
-        margin-left: auto;
-        margin-right: auto;
+    .skill-tag,
+    .filter-btn,
+    .bio-stat,
+    .resume-item,
+    .info-card {
+        margin-bottom: 20px;
     }
     
-    /* Timeline to'g'irlash */
+    /* Oxirgi elementda margin bottom 0 */
+    .home-text:last-child,
+    .home-visual:last-child,
+    .bio-image:last-child,
+    .bio-text:last-child,
+    .resume-column:last-child,
+    .info-card:last-child,
+    .contact-form:last-child,
+    .portfolio-item:last-child,
+    .service-card:last-child,
+    .about-card:last-child,
+    .timeline-item:last-child,
+    .stat-item:last-child,
+    .skill-tag:last-child,
+    .filter-btn:last-child,
+    .bio-stat:last-child,
+    .resume-item:last-child,
+    .info-card:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Bio image */
+    .bio-image {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto 30px auto;
+    }
+    
+    /* About cards */
+    .about-card {
+        height: 260px;
+        margin-bottom: 20px;
+    }
+    
+    .about-grid {
+        gap: 0;
+    }
+    
+    /* Stats grid - 2 column */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .stat-item {
+        margin-bottom: 0;
+        padding: 15px;
+    }
+    
+    /* Skills wrapper */
+    .skills-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .skill-tag {
+        width: auto;
+        margin-bottom: 10px;
+    }
+    
+    /* Portfolio grid - 2 column */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 0;
+    }
+    
+    /* Services grid - 1 column */
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        margin-bottom: 0;
+    }
+    
+    /* Resume items */
+    .resume-items {
+        gap: 20px;
+    }
+    
+    .resume-item {
+        margin-bottom: 0;
+    }
+    
+    /* Timeline */
     .timeline-item {
         width: 100% !important;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
     
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
-        width: 90%;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center;
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left;
     }
     
     .timeline::before {
@@ -1746,7 +1859,18 @@ footer {
         left: 20px;
     }
     
-    /* Navbar container to'g'irlash */
+    /* Bio stats */
+    .bio-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .bio-stat {
+        margin-bottom: 0;
+    }
+    
+    /* Navbar */
     .navbar .container {
         width: 100%;
         padding: 0 15px;
@@ -1763,7 +1887,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
         transition: left 0.3s ease;
         border-radius: 0 30px 30px 0;
         padding: 20px;
@@ -1778,6 +1902,7 @@ footer {
     .nav-menu li {
         width: 100%;
         text-align: center;
+        margin-bottom: 5px;
     }
     
     .nav-link {
@@ -1787,7 +1912,7 @@ footer {
         font-size: 16px;
         gap: 10px;
         border-radius: 50px;
-        margin: 5px 0;
+        margin: 0;
     }
     
     .nav-link i {
@@ -1810,14 +1935,7 @@ footer {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
-    /* Qolgan responsive stillar */
-    .home-content,
-    .about-bio,
-    .resume-grid,
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
+    /* Home section */
     .home-visual {
         order: -1;
     }
@@ -1833,16 +1951,11 @@ footer {
     .typewriter {
         font-size: 24px;
     }
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
     .nav-menu {
         width: 85%;
-        gap: 15px;
     }
     
     .nav-link {
@@ -1854,29 +1967,13 @@ footer {
         padding: 0 15px;
     }
     
-    .home-content,
-    .about-bio,
-    .resume-grid,
-    .contact-wrapper,
-    .portfolio-grid,
-    .services-grid,
-    .about-grid,
-    .skills-wrapper,
-    .stats-grid,
-    .resume-column,
-    .about-timeline,
-    .skills-cloud,
-    .section-header,
-    .home-text,
-    .home-visual,
-    .bio-text,
-    .bio-image,
-    .info-cards,
-    .contact-form,
-    .portfolio-filter,
-    .timeline,
-    .timeline-content {
-        width: 95%;
+    .bio-image {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .about-card {
+        height: 240px;
     }
     
     .glitch {
@@ -1891,18 +1988,23 @@ footer {
         font-size: 32px;
     }
     
-    .about-grid,
-    .portfolio-grid,
-    .services-grid {
+    .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
-    .bio-stats {
-        grid-template-columns: repeat(2, 1fr);
+    .services-grid {
+        gap: 20px;
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .bio-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .stat-item::after {
@@ -1911,6 +2013,7 @@ footer {
     
     .home-buttons {
         flex-direction: column;
+        gap: 15px;
     }
     
     .btn {
@@ -1920,11 +2023,13 @@ footer {
     
     .social-strip {
         justify-content: center;
+        gap: 15px;
     }
     
     .footer-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
 }
 
@@ -1938,28 +2043,29 @@ footer {
         font-size: 14px;
     }
     
-    .home-content,
-    .about-bio,
-    .resume-grid,
-    .contact-wrapper,
-    .portfolio-grid,
-    .services-grid,
-    .about-grid,
-    .skills-wrapper,
-    .stats-grid,
-    .resume-column,
-    .about-timeline,
-    .skills-cloud,
-    .section-header,
-    .home-text,
-    .home-visual,
-    .bio-text,
-    .bio-image,
-    .info-cards,
-    .contact-form,
-    .portfolio-filter,
-    .timeline,
-    .timeline-content {
-        width: 98%;
+    .bio-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about-card {
+        height: 220px;
+    }
+    
+    .bio-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        padding: 12px;
+    }
+    
+    .skill-tag {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
