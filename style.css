@@ -154,8 +154,8 @@ body {
     border-radius: 50%;
     padding: 12px 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .theme-icon:hover {
@@ -1642,7 +1642,7 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE - MOBIL MARKAZLASHTIRILGAN ===== */
 @media (max-width: 1200px) {
     .about-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1659,23 +1659,139 @@ footer {
         display: none;
     }
     
+    /* Ota class 100% */
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    
+    /* Bola classlar 90% va markazda */
+    .home-content,
+    .about-bio,
+    .resume-grid,
+    .contact-wrapper,
+    .portfolio-grid,
+    .services-grid,
+    .about-grid,
+    .skills-wrapper,
+    .stats-grid,
+    .resume-column,
+    .about-timeline,
+    .skills-cloud,
+    .section-header,
+    .home-text,
+    .home-visual,
+    .bio-text,
+    .bio-image,
+    .resume-column,
+    .info-cards,
+    .contact-form,
+    .portfolio-filter,
+    .timeline,
+    .timeline-content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Gridlarni to'g'irlash */
+    .home-content,
+    .about-bio,
+    .resume-grid,
+    .contact-wrapper,
+    .portfolio-grid,
+    .services-grid,
+    .about-grid {
+        display: block;
+    }
+    
+    /* Har bir elementni markazga joylash */
+    .home-text,
+    .home-visual,
+    .bio-image,
+    .bio-text,
+    .resume-column,
+    .info-card,
+    .contact-form,
+    .portfolio-item,
+    .service-card,
+    .about-card,
+    .timeline-item,
+    .stat-item,
+    .skill-tag {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Timeline to'g'irlash */
+    .timeline-item {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        width: 90%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-dot {
+        left: 20px;
+    }
+    
+    /* Navbar container to'g'irlash */
+    .navbar .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 70px;
         left: -100%;
-        width: 100%;
+        width: 80%;
         height: calc(100vh - 70px);
         background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 25px;
+        gap: 20px;
         transition: left 0.3s ease;
+        border-radius: 0 30px 30px 0;
+        padding: 20px;
+        box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 999;
     }
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 16px;
+        gap: 10px;
+        border-radius: 50px;
+        margin: 5px 0;
+    }
+    
+    .nav-link i {
+        font-size: 18px;
     }
     
     .hamburger {
@@ -1694,6 +1810,7 @@ footer {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
+    /* Qolgan responsive stillar */
     .home-content,
     .about-bio,
     .resume-grid,
@@ -1720,27 +1837,46 @@ footer {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 50px;
-        margin-right: 0;
-        width: calc(100% - 70px);
-        text-align: left;
-    }
-    
-    .timeline-dot {
-        left: 20px;
-    }
 }
 
 @media (max-width: 768px) {
+    .nav-menu {
+        width: 85%;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    
     .container {
-        padding: 0 20px;
+        padding: 0 15px;
+    }
+    
+    .home-content,
+    .about-bio,
+    .resume-grid,
+    .contact-wrapper,
+    .portfolio-grid,
+    .services-grid,
+    .about-grid,
+    .skills-wrapper,
+    .stats-grid,
+    .resume-column,
+    .about-timeline,
+    .skills-cloud,
+    .section-header,
+    .home-text,
+    .home-visual,
+    .bio-text,
+    .bio-image,
+    .info-cards,
+    .contact-form,
+    .portfolio-filter,
+    .timeline,
+    .timeline-content {
+        width: 95%;
     }
     
     .glitch {
@@ -1789,5 +1925,41 @@ footer {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 90%;
+    }
+    
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .home-content,
+    .about-bio,
+    .resume-grid,
+    .contact-wrapper,
+    .portfolio-grid,
+    .services-grid,
+    .about-grid,
+    .skills-wrapper,
+    .stats-grid,
+    .resume-column,
+    .about-timeline,
+    .skills-cloud,
+    .section-header,
+    .home-text,
+    .home-visual,
+    .bio-text,
+    .bio-image,
+    .info-cards,
+    .contact-form,
+    .portfolio-filter,
+    .timeline,
+    .timeline-content {
+        width: 98%;
     }
 }
