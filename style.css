@@ -771,160 +771,6 @@ section {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.about-timeline {
-    margin-bottom: 80px;
-}
-
-.timeline-title {
-    font-size: 28px;
-    margin-bottom: 40px;
-    color: var(--text-primary);
-    text-align: center;
-    background: linear-gradient(135deg, #4a7ac9, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, #000000, #1a3a5c, #4a7ac9, transparent);
-    box-shadow: 0 0 40px #4a7ac9;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    margin-right: calc(50% + 30px);
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    margin-left: calc(50% + 30px);
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background: #4a7ac9;
-    border-radius: 50%;
-    z-index: 2;
-    box-shadow: 0 0 50px #4a7ac9;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 0 30px #4a7ac9; }
-    50% { box-shadow: 0 0 70px #4a7ac9; }
-}
-
-.timeline-content {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid rgba(74, 122, 201, 0.3);
-    backdrop-filter: blur(10px);
-    width: calc(50% - 50px);
-    transition: var(--transition);
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 50px rgba(74, 122, 201, 0.4);
-    border-color: #4a7ac9;
-}
-
-.timeline-date {
-    display: inline-block;
-    padding: 5px 15px;
-    background: linear-gradient(135deg, #000000, #1a3a5c);
-    color: white;
-    border-radius: 50px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-}
-
-.timeline-content h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-}
-
-.timeline-content p {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-.skills-cloud {
-    margin-top: 80px;
-}
-
-.skills-title {
-    font-size: 28px;
-    margin-bottom: 40px;
-    color: var(--text-primary);
-    text-align: center;
-    background: linear-gradient(135deg, #4a7ac9, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.skills-wrapper {
-    position: relative;
-    min-height: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.skill-tag {
-    padding: 12px 25px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50px;
-    color: var(--text-secondary);
-    font-size: 16px;
-    border: 1px solid rgba(74, 122, 201, 0.3);
-    backdrop-filter: blur(5px);
-    transition: var(--transition);
-    animation: skillPulse 3s infinite;
-    animation-delay: calc(var(--i) * 0.2s);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.skill-tag:hover {
-    background: linear-gradient(135deg, #000000, #1a3a5c);
-    color: white;
-    transform: scale(1.1);
-    border-color: #4a7ac9;
-    box-shadow: 0 0 40px rgba(74, 122, 201, 0.6);
-}
-
-@keyframes skillPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
 /* ===== RESUME SECTION ===== */
 .resume {
     background: var(--bg-primary);
@@ -1078,6 +924,7 @@ section {
     border: 1px solid rgba(74, 122, 201, 0.3);
 }
 
+/* ===== STATS GRID ===== */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1649,7 +1496,163 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE - MOBIL MARKAZLASHTIRILGAN VA BIR XIL O'LCHAM ===== */
+/* ===== TIMELINE - ISH TAJRIBAM ===== */
+.about-timeline {
+    margin-bottom: 80px;
+}
+
+.timeline-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    text-align: center;
+    background: linear-gradient(135deg, #4a7ac9, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #000000, #1a3a5c, #4a7ac9, transparent);
+    box-shadow: 0 0 40px #4a7ac9;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #4a7ac9;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 50px #4a7ac9;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 30px #4a7ac9; }
+    50% { box-shadow: 0 0 70px #4a7ac9; }
+}
+
+.timeline-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(74, 122, 201, 0.3);
+    backdrop-filter: blur(10px);
+    width: calc(50% - 50px);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(74, 122, 201, 0.4);
+    border-color: #4a7ac9;
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background: linear-gradient(135deg, #000000, #1a3a5c);
+    color: white;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.timeline-content h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ===== SKILLS CLOUD ===== */
+.skills-cloud {
+    margin-top: 80px;
+}
+
+.skills-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    text-align: center;
+    background: linear-gradient(135deg, #4a7ac9, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skills-wrapper {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    border: 1px solid rgba(74, 122, 201, 0.3);
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+    animation: skillPulse 3s infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, #000000, #1a3a5c);
+    color: white;
+    transform: scale(1.1);
+    border-color: #4a7ac9;
+    box-shadow: 0 0 40px rgba(74, 122, 201, 0.6);
+}
+
+@keyframes skillPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
     .about-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1673,7 +1676,7 @@ footer {
         margin: 0 auto;
     }
     
-    /* Barcha elementlar 100% en va markazda */
+    /* Barcha elementlar 100% en */
     .home-content,
     .about-bio,
     .resume-grid,
@@ -1715,10 +1718,37 @@ footer {
     .about-bio,
     .resume-grid,
     .contact-wrapper,
-    .portfolio-grid,
-    .services-grid,
     .about-grid {
         display: block;
+    }
+    
+    /* Portfolio grid - 2 column */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Services grid - 2 column */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Stats grid - 2 column */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    /* Bio stats - 2 column */
+    .bio-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     /* Barcha elementlar orasiga 20px masofa */
@@ -1742,6 +1772,14 @@ footer {
         margin-bottom: 20px;
     }
     
+    /* Grid elementlarda margin bottom 0 */
+    .portfolio-item,
+    .service-card,
+    .stat-item,
+    .bio-stat {
+        margin-bottom: 0;
+    }
+    
     /* Oxirgi elementda margin bottom 0 */
     .home-text:last-child,
     .home-visual:last-child,
@@ -1750,16 +1788,11 @@ footer {
     .resume-column:last-child,
     .info-card:last-child,
     .contact-form:last-child,
-    .portfolio-item:last-child,
-    .service-card:last-child,
     .about-card:last-child,
     .timeline-item:last-child,
-    .stat-item:last-child,
     .skill-tag:last-child,
     .filter-btn:last-child,
-    .bio-stat:last-child,
-    .resume-item:last-child,
-    .info-card:last-child {
+    .resume-item:last-child {
         margin-bottom: 0;
     }
     
@@ -1773,101 +1806,45 @@ footer {
     /* About cards */
     .about-card {
         height: 260px;
-        margin-bottom: 20px;
-    }
-    
-    .about-grid {
-        gap: 0;
-    }
-    
-    /* Stats grid - 2 column */
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 20px;
-    }
-    
-    .stat-item {
-        margin-bottom: 0;
-        padding: 15px;
-    }
-    
-    /* Skills wrapper */
-    .skills-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-    
-    .skill-tag {
-        width: auto;
-        margin-bottom: 10px;
-    }
-    
-    /* Portfolio grid - 2 column */
-    .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    .portfolio-item {
-        margin-bottom: 0;
-    }
-    
-    /* Services grid - 1 column */
-    .services-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .service-card {
-        margin-bottom: 0;
-    }
-    
-    /* Resume items */
-    .resume-items {
-        gap: 20px;
-    }
-    
-    .resume-item {
-        margin-bottom: 0;
     }
     
     /* Timeline */
+    .timeline::before {
+        left: 20px;
+    }
+    
     .timeline-item {
-        width: 100% !important;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
     
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
-        width: 100%;
-        margin-left: 0 !important;
+        width: calc(100% - 50px);
+        margin-left: 50px !important;
         margin-right: 0 !important;
         text-align: left;
-    }
-    
-    .timeline::before {
-        left: 20px;
     }
     
     .timeline-dot {
         left: 20px;
     }
     
-    /* Bio stats */
-    .bio-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    /* Contact cards */
+    .info-cards {
+        display: block;
     }
     
-    .bio-stat {
+    .info-card {
+        margin-bottom: 15px;
+    }
+    
+    .info-card:last-child {
         margin-bottom: 0;
+    }
+    
+    /* Contact form */
+    .contact-form {
+        margin-top: 20px;
     }
     
     /* Navbar */
@@ -1988,20 +1965,25 @@ footer {
         font-size: 32px;
     }
     
+    /* Portfolio grid - 1 column */
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
+    /* Services grid - 1 column */
     .services-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
+    /* Stats grid - 2 column */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
     
+    /* Bio stats - 2 column */
     .bio-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -2052,12 +2034,16 @@ footer {
         height: 220px;
     }
     
-    .bio-stats {
-        grid-template-columns: 1fr;
-    }
-    
+    /* Stats grid - 1 column */
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Bio stats - 1 column */
+    .bio-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .stat-item {
