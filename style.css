@@ -143,16 +143,14 @@ body {
     gap: 18px;
 }
 
-/* Theme icon - yangi */
+/* Theme icon - katta ekranlarda ko'rinadi */
 .theme-icon {
     cursor: default;
     font-size: 20px;
+    color: #4a7ac9;
     transition: var(--transition);
     animation: pulse 2s infinite;
-    background-color: rgba(0, 0, 255, 0);
-    border-radius: 50%;
-    padding: 5px 10px;
-    padding-top: 7px;
+    display: inline-block;
 }
 
 .theme-icon:hover {
@@ -1651,6 +1649,11 @@ footer {
 }
 
 @media (max-width: 991px) {
+    /* Ikonka kichik ekranlarda yo'qoladi */
+    .theme-icon {
+        display: none;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 70px;
