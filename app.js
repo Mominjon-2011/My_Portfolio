@@ -24,7 +24,7 @@ navLinks.forEach(link => {
 // Typed Text Effect
 const typedText = document.querySelector('.typed-text');
 if (typedText) {
-    const words = ['Full-Stack Developer', 'UI/UX Designer', 'Creative Thinker', 'Problem Solver', 'Team Lead'];
+    const words = ['Yosh dasturchi', 'HTML/CSS', 'Bootstrap', 'Tailwind', 'JavaScript'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -141,43 +141,6 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Stats Counter
-const statNumbers = document.querySelectorAll('.stat-number');
-const statsSection = document.querySelector('.stats-grid');
-
-function animateStats() {
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 50;
-        
-        const updateCounter = () => {
-            if (current < target) {
-                current += increment;
-                stat.textContent = Math.ceil(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                stat.textContent = target;
-            }
-        };
-        
-        updateCounter();
-    });
-}
-
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateStats();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
 // Contact form
 contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -193,45 +156,8 @@ contactForm?.addEventListener('submit', (e) => {
         
         contactForm.reset();
         
-        showNotification('Xabar yuborildi! Tez orada javob beramiz.', 'success');
+        alert('Xabar yuborildi! Tez orada javob beramiz.');
     }, 300);
-});
-
-// Notification function
-function showNotification(message, type) {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-        <p>${message}</p>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
-}
-
-// Parallax effect for floating elements
-document.addEventListener('mousemove', (e) => {
-    const elements = document.querySelectorAll('.element');
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-    
-    elements.forEach((el, index) => {
-        const speed = (index + 1) * 20;
-        const x = (mouseX * speed) - (speed / 2);
-        const y = (mouseY * speed) - (speed / 2);
-        el.style.transform = `translate(${x}px, ${y}px)`;
-    });
 });
 
 // Scroll animation for sections
@@ -256,24 +182,9 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        navbar.style.padding = '13px 0';
+        navbar.style.padding = '10px 0';
     } else {
         navbar.style.background = 'rgba(0, 0, 0, 0.95)';
         navbar.style.padding = '15px 0';
     }
-});
-
-// Preloader
-window.addEventListener('load', () => {
-    const preloader = document.createElement('div');
-    preloader.className = 'preloader';
-    preloader.innerHTML = '<div class="loader"></div>';
-    document.body.appendChild(preloader);
-    
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.remove();
-        }, 500);
-    }, 1000);
 });

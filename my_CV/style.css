@@ -1,0 +1,278 @@
+/* BLACK & WHITE THEME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #f5f5f5;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Til tanlash */
+.lang {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+    padding: 8px 25px;
+    border: none;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: #f0f0f0;
+}
+
+.lang-btn.active {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* CV */
+.cv {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+}
+
+/* Chap qism */
+.left {
+    background: #fafafa;
+    padding: 30px 25px;
+    border-right: 1px solid #000000;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #000000;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.left h3 {
+    font-size: 16px;
+    text-align: center;
+    color: #444;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Bo'limlar */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h4 {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section h4 i {
+    font-size: 18px;
+    color: #000000;
+}
+
+.section p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section p i {
+    width: 20px;
+    color: #000000;
+    font-size: 16px;
+}
+
+/* O'ng qism */
+.right {
+    padding: 30px;
+}
+
+.right h4 {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right h4 i {
+    font-size: 20px;
+    color: #000000;
+}
+
+.item {
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.item b {
+    color: #000000;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.item b i {
+    font-size: 14px;
+    color: #000000;
+}
+
+.item p {
+    color: #444;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 22px;
+    margin-bottom: 5px;
+}
+
+.item p i {
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Tugmalar */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 35px;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.btn i {
+    font-size: 16px;
+}
+
+.download {
+    background: #000000;
+    color: #ffffff;
+}
+
+.download:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.back {
+    background: #ffffff;
+    color: #000000;
+}
+
+.back:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .cv {
+        grid-template-columns: 1fr;
+    }
+    
+    .left {
+        border-right: none;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Print */
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+    
+    .lang, .buttons {
+        display: none;
+    }
+    
+    .cv {
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+}
