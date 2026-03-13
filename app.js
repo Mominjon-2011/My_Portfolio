@@ -188,3 +188,84 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '15px 0';
     }
 });
+
+// Certificate Modal function (YANGI)
+function openCertificateModal(imgSrc) {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+    
+    // Close modal when clicking on close button
+    const closeBtn = document.querySelector('.modal-close');
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    // Close modal with ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+}
+
+// Certificates filter functionality (YANGI)
+const certFilterBtns = document.querySelectorAll('.certificates-filter .filter-btn');
+const certificateItems = document.querySelectorAll('.certificate-item');
+
+if (certFilterBtns.length > 0) {
+    certFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all filter buttons
+            certFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.getAttribute('data-filter');
+            
+            certificateItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
+// Download button functionality (YANGI)
+document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const certificateCard = btn.closest('.certificate-card');
+        const imgSrc = certificateCard.querySelector('img').src;
+        
+        // Create a temporary link to download the image
+        const link = document.createElement('a');
+        link.href = imgSrc;
+        link.download = 'sertifikat.jpg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show notification
+        alert('Sertifikat yuklab olinmoqda...');
+    });
+});
