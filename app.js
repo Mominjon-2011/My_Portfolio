@@ -190,33 +190,42 @@ window.addEventListener('scroll', () => {
 });
 
 // Certificate Modal function (YANGI)
-function openCertificateModal(imgSrc) {
-    const modal = document.getElementById('certificateModal');
-    const modalImg = document.getElementById('modalImage');
-    
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
-    
-    // Close modal when clicking on close button
-    const closeBtn = document.querySelector('.modal-close');
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
+const certificateModal = document.getElementById('certificateModal');
+const modalImage = document.getElementById('modalImage');
+const modalCloseBtn = document.querySelector('.modal-close');
+
+function closeCertificateModal() {
+    if (certificateModal) {
+        certificateModal.style.display = 'none';
     }
-    
-    // Close modal when clicking outside the image
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    
-    // Close modal with ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") {
-            modal.style.display = "none";
-        }
-    });
 }
+
+function openCertificateModal(imgSrc, event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    if (!certificateModal || !modalImage) {
+        return;
+    }
+
+    certificateModal.style.display = 'block';
+    modalImage.src = imgSrc;
+}
+
+modalCloseBtn?.addEventListener('click', closeCertificateModal);
+
+certificateModal?.addEventListener('click', (event) => {
+    if (event.target === certificateModal) {
+        closeCertificateModal();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCertificateModal();
+    }
+});
 
 // Certificates filter functionality (YANGI)
 const certFilterBtns = document.querySelectorAll('.certificates-filter .filter-btn');

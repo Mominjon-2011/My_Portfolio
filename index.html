@@ -422,7 +422,7 @@
                                     <div class="certificate-info">
                                         <h3>Generative Al Automation</h3>
                                         <p>Khiva IT Park | 2026</p>
-                                        <a href="serifikatlarim/sertifikat_profesianal_1.pdf" class="view-btn" onclick="openCertificateModal('serifikatlarim/sertifikat_profesianal_1.pdf')">
+                                        <a href="serifikatlarim/sertifikat_profesianal_1.pdf" class="view-btn" onclick="openCertificateModal('serifikatlarim/sertifikat_profesianal_1.png', event)">
                                             <i class="fas fa-eye"></i> View
                                         </a>
                                     </div>
@@ -444,7 +444,7 @@
                                     <div class="certificate-info">
                                         <h3>Meta Front-End Develope</h3>
                                         <p>Khiva IT Park | 2026</p>
-                                        <a href="serifikatlarim/sertifikat_professianal_2.pdf" class="view-btn" onclick="openCertificateModal('https://picsum.photos/800/600?random=102')">
+                                        <a href="serifikatlarim/sertifikat_profesianal_2.pdf" class="view-btn" onclick="openCertificateModal('serifikatlarim/sertifikat_profesianal_2.png', event)">
                                             <i class="fas fa-eye"></i> View
                                         </a>
                                     </div>
@@ -641,19 +641,19 @@
 
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                             <span class="focus-border"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                             <span class="focus-border"></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject">
+                            <input type="text" name="subject" placeholder="Subject">
                             <span class="focus-border"></span>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                             <span class="focus-border"></span>
                         </div>
                         <button type="submit" class="btn-submit">
