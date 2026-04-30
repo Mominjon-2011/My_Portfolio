@@ -24,7 +24,7 @@ navLinks.forEach(link => {
 // Typed Text Effect
 const typedText = document.querySelector('.typed-text');
 if (typedText) {
-    const words = ['Yosh dasturchi', 'HTML/CSS', 'Bootstrap', 'Tailwind', 'JavaScript'];
+    const words = ['young programmer'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
